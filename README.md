@@ -1,23 +1,18 @@
 # How to run the program
- NOTE: A well knowlege of python and SQL required to be able to run this code
+
 ##### Step one: prepare the software
 * install vagrant last version
 * install virtual box
 * install python
-* up the machine into vagrant
-* import all the necessary libraries
-##### Step two: Download the data
-* download the data [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip). You will need to unzip this file after downloading it. The file inside is called newsdata.sql. Put this file into the vagrant directory, which is shared with your virtual machine.
-* To run the python file, `cd` into the `vagrant` and login to your vm ( `vagrant up`; `vagrant ssh`) :
- and use the command:
-`python newsdata.py`.
-##### If you want to : Explore the data
-Once you have the data loaded into your database, connect to your database using `psql -d news` and explore the tables using the `\dt` and `\d` table commands and select statements.
+* up the machine into vagrant and login
 
-`\dt` ? display tables ? lists the tables that are available in the database.
-`\d table` ? (replace table with the name of a table) ? shows the database schema for that particular table.
-# description of the program's design
-This program is designed using the mentioned softwares in the previous section step one 
-By: Aya Muhammad.
-following the Udacity's instructions mentioned in Full stack web development nd.
-for more information about the design email me at: Ayaengineera2015@gmail.com
+##### step two: create views
+-I have attached a full guide for create views commands and their output tables, the file named `views queries and tables.txt` for easier checking if needed, here they are for quick copying:
+1- CREATE VIEW authcles as select articles.author, articles.title, articles.slug, articles.time, articles.id, authors.name from articles join authors on articles.author = authors.id;
+2- CREATE VIEW bad_clicks as (SELECT date(time), COUNT(*) AS bad_c from log where status = '404 NOT FOUND' group by date(time) order by date(time));
+3- CREATE VIEW all_clicks as (SELECT date(time), COUNT(*) AS all_c from log group by date(time) order by date(time));
+4- CREATE VIEW clicksbg as (select * from all_clicks join bad_clicks using (date));
+5- CREATE VIEW clicksbg_h as (select * from clicksbg where 1/(all_c/100) < (bad_c*100)/all_c);
+
+##### step three: run the python file
+`$python  python source_code.py`
