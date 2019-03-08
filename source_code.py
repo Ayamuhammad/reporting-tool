@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
 
 # helper code for formatting output with python:
 #  https://pynative.com/python-postgresql-select-data-from-table/
@@ -54,7 +54,7 @@ try:
     for row in errors_result:
         print '* ', row[0], "__", row[1], " errors"
 # to print error msg as suggested:
-except (Exception, psycopg2.Error) as error :
+except (Exception, psycopg2.Error) as error:
     print ("Error while fetching data: ", error)
 finally:
     if(connection):
