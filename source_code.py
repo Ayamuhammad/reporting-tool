@@ -55,7 +55,7 @@ try:
         print '* ', row[0], "__", row[1], " errors"
 # to print error msg as suggested:
 except (Exception, psycopg2.Error) as error:
-    print ("Error while fetching data: ", error)
+    print("Error while fetching data: ", error)
 finally:
     if(connection):
         cursor.close()
