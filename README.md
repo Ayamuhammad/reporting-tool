@@ -8,6 +8,7 @@
 * open your terminal
 *  bring the virtual machine online (with `vagrant up`), do so now. Then log into it with `vagrant ssh`.
 * `cd` to your data directory that conatins the data in step two
+* *make sure to have these too*: psycopg2 - PostgreSQL
 ##### Step two: prepare the data
 * download the file *source_code.py*
 * download the *newsdata.sql* file from udacity, this [link](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) should work with you if you are eligible to view udacity's courses.
