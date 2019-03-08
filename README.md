@@ -1,7 +1,7 @@
 # Project repository contents
 * **source_code.py** - The Python program that connects to the PostgreSQL database, executes the SQL queries and displays the results.
 * **README.md** - This read me file.
-* **new_logs_output.txt** - The text output of the `source_code.py`
+* **output.txt** - The text output of the `source_code.py`
 * **views queries and tables.txt** contains create view commands and their tables
 # How to run the program
 #### Step one: prepare the software
