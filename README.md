@@ -10,11 +10,12 @@
 * `cd` to your data directory that conatins the data in step two
 ##### Step two: prepare the data
 * download the file *source_code.py*
-* download the newsdata.sql file from udacity, this [link](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) should work with you if you are eligible to view udacity's courses.
+* download the *newsdata.sql* file from udacity, this [link](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) should work with you if you are eligible to view udacity's courses.
 ##### Step three: load the data
 To load the data, cd into the vagrant directory and use the command `psql -d news -f newsdata.sql`.
 ##### step four: create views
-* when you get a psql prompt like this `news=>` copy and paste each line of the folloing views
+* when you get a psql prompt like this `news=>` copy and paste each line of the folloing views:
+
 1- `CREATE VIEW authcles as select articles.author, articles.title, articles.slug, articles.time, articles.id, authors.name from articles join authors on articles.author = authors.id;`
 
 2- `CREATE VIEW bad_clicks as (SELECT date(time), COUNT(*) AS bad_c from log where status = '404 NOT FOUND' group by date(time) order by date(time));`
