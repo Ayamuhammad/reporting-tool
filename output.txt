@@ -10,4 +10,4 @@
 *  Markoff Chaney __ 84557 views
 
       errors
-*  Jul 17, 2016 __ 2.3  errors
+*  Jul 17, 2016 __ 2.3 %  errors
