@@ -1,3 +1,9 @@
+# About the project
+The project is a reporting tool that uses information from a database containing newspaper articles and the web server log for a website. The reporting tool should answer the following questions:
+
+1. What are the most popular three articles of all time?
+2. Who are the most popular article authors of all time?
+3. On which days did more than 1% of requests lead to errors?
 # Project repository contents
 * **source_code.py** - The Python program that connects to the PostgreSQL database, executes the SQL queries and displays the results.
 * **README.md** - This read me file.
@@ -33,5 +39,5 @@ To load the data, cd into the vagrant directory and use the command `psql -d new
 
 * I have attached a full guide for create views commands and their output tables, the file named `views queries and tables.txt`. feel free to check it if you need to.
 #### step five: run the python file
-* press `ctrl + D` and run this command `$python  python source_code.py`
+* press `ctrl + D` and run this command `$python source_code.py`
 * the terminal should now view the output of this code, like the output attached in the file `output.txt`
